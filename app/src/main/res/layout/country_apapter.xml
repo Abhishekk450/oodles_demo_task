@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="countrylist"
+            type="com.example.oodlesdemoproject.model.countrydetails.CountryDetailsResponse" />
+    </data>
+
+<androidx.cardview.widget.CardView android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_80sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:elevation="@dimen/_5sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_flag"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_marginLeft="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_country_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:text="@{countrylist.name}"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image_flag"
+        app:layout_constraintTop_toTopOf="@+id/image_flag"/>
+
+        <TextView
+            android:id="@+id/text_capital_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_9ssp"
+            android:text="@string/capital"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:layout_constraintStart_toStartOf="@+id/text_country_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/image_flag"/>
+
+        <TextView
+            android:id="@+id/text_country_capital"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:text="@{countrylist.capital}"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:layout_constraintLeft_toRightOf="@+id/text_capital_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_country_title"/>
+
+        <TextView
+            android:id="@+id/text_currencies_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_9ssp"
+            android:text="@string/currencies"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:layout_constraintStart_toStartOf="@+id/text_country_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_capital_title"
+            app:layout_constraintLeft_toRightOf="@+id/image_flag"/>
+
+        <TextView
+            android:id="@+id/text_country_currency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/text_currencies_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_country_capital"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OodlesDemoProject</string>
+    <string name="capital">Capital</string>
+    <string name="internet_connection_check">Internet connection is not available.</string>
+    <string name="search_by_isocode">Search by isocode</string>
+    <string name="currencies">Currencies</string>
+</resources>
